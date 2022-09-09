@@ -21,11 +21,15 @@ console.log(Add(2, 3));
 
 const fullName = (
     firstName: string,
-    middleName?: string,
+    middleName: string = "",
     lastName?: string
 ): string => {
-    return firstName + middleName + lastName;
+    return `${firstName}${middleName ? " " + middleName + " " : ""}${
+        lastName ? " " + lastName + " " : ""
+    }`;
 };
+
+console.log(fullName("faiz", "", "hafidza"));
 
 type NoArg = {
     _brand: "NoArg";
@@ -41,6 +45,15 @@ type OneArg = {
 let noArg: NoArg = discriminator(() => {});
 let oneArg: OneArg = discriminator((x: number) => {});
 
+/**
+ * generic parameters
+ * @param myFunc
+ * @returns T extends () => any ? NoArg : OneArg
+ *
+ * kalau di golang functionnya seperti berikut:
+ *
+ * ```func discriminator[T any](myFunc T)```
+ */
 function discriminator<T extends (x: any) => any>(myFunc: T) {
     let discriminatedFunc;
     if (myFunc.length === 0) {
