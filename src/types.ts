@@ -40,4 +40,12 @@ enum Months {
     "NOVEMBER",
     "DESEMBER",
 }
+
+let obj: any = {
+    nama: "Faiz",
+    umur: 24,
+    isMarried: true,
+};
+
 console.log(Months[12]);
+console.log(obj.nama);
