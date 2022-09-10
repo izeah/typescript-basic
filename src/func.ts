@@ -69,3 +69,10 @@ function discriminator<T extends (x: any) => any>(myFunc: T) {
     }
     return discriminatedFunc as unknown as T extends () => any ? NoArg : OneArg;
 }
+
+function getData<T extends unknown>(data: T): T {
+    return data;
+}
+
+console.log(getData("string").length);
+console.log(getData(123).toString());
