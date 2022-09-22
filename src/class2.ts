@@ -1,4 +1,5 @@
 class User {
+    // encapsulation
     private _email: string = "";
     static roleName: string = "User";
 

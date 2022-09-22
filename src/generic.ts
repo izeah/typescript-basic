@@ -4,6 +4,7 @@ datas = datas.set("abis", "aklsdjfaltrue");
 console.log(datas);
 
 class List<T> {
+    // encapsulation
     private data: T[];
 
     constructor() {

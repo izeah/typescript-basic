@@ -33,6 +33,7 @@ class DBConfig {
     }
 }
 
+// implements inheritance and abstraction
 class DBPostgreSQL extends DBConfig implements DB, CRUD {
     sslMode: boolean;
     tz: string;
